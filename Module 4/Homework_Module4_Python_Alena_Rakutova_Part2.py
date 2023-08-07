@@ -73,7 +73,7 @@ def text_add(list_add1):
         return str_add2
 x = text_add(list_add1)
 print(f"This is Text without Capital Letters: {x}")
-#function #7 which convert first letters of the sentences into Cpital letters and shows final version of the text
+#function #7 Which convert first letters of the sentences into Cpital letters and shows final version of the text
 norm3 = x.split(".")
 def final_text(norm3):
     norm3 = [i.lstrip() for i in norm3]
