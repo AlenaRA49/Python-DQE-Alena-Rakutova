@@ -76,12 +76,17 @@ query = """homEwork:
 
   last iz TO calculate nuMber OF Whitespace characteRS in this Tex. caREFULL, not only Spaces, but ALL whitespaces. I got 87."""
 
+if __name__ == "__main__":
+   target_word = 'Paragraph.'
+   fixed_query = iz(query)
+   normal_string = norm(fixed_query)
+   new_sentence = new_sent(normal_string)
+   modified_text = insert_sentence_after_word(normal_string, target_word, new_sentence)
+   total_whitespace = count_whitespace_characters(normal_string)
+   print("Total whitespace characters:", total_whitespace)
+   print("Final text:", modified_text)
 
-target_word = 'Paragraph.'
-fixed_query = iz(query)
-normal_string = norm(fixed_query)
-new_sentence = new_sent(normal_string)
-modified_text = insert_sentence_after_word(normal_string, target_word, new_sentence)
-total_whitespace = count_whitespace_characters(normal_string)
-print("Total whitespace characters:", total_whitespace)
-print("Final text:", modified_text)
+
+
+
+

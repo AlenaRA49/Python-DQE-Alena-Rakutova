@@ -1,8 +1,11 @@
 import datetime
 import os, sys
-sys.path.insert(0, 'D:\\learning\\Python For DQE\\Python project\\Module 4')
+import importlib.util
 
-from Homework_Module4_Python_Basics_Alena_Rakutova_2_1 import norm  as normalization
+sys.path.insert(0, "D:\learning\Python For DQE\Python project\Module 4")
+print("The sys.argv list is:",sys.argv)
+print(sys.path)
+from Homework_Module4_Python_Basics_Alena_Rakutova_2_1 import norm as normalization
 
 class UserInformationCollector:
 
@@ -190,7 +193,7 @@ class UserInformationCollector:
         new_date = input("Enter the date and time (dd/mm/yyyy): ")
         while not self.validate_future_date(new_date):
             print("Invalid date. Please enter a future date.")
-            new_date = input("Enter the date and time (dd/mm/yyyy): ")
+            new_date = input("Enter the date (dd/mm/yyyy): ")
         self.date = new_date
         print("Information collected successfully!")
 
@@ -222,7 +225,7 @@ class UserInformationCollector:
         self.footer = f"My feedback is: {self.feedback_map}"
 
     def collect_information_from_file(self):
-        default_file_path = r"../Source/Source.txt"
+        default_file_path = sys.argv[1]
 
         if not os.path.exists(default_file_path):
             print("Default file not found.")
